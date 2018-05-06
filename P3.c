@@ -23,7 +23,7 @@ nb--;
 	printf(") ");
 }
 int main() {
-	int a,c,opcao,nd2,nd1,bin[32],bin2[32],bin3[32];
+	int a,b,c,opcao,nd2,nd1,bin[32],bin2[32],bin3[32];
 	printf("         Menu\n"
 	"1.NOT\n2.AND\n3.OR\n4.XOR\n5.RIGHT SHIFT\n6.LEFT SHIFT\n\nEscolha uma opcao: ");
 	scanf("%d",&opcao); getchar();
