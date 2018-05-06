@@ -1,4 +1,6 @@
 #include <stdio.h>
+//Italo Dias Nonato
+//11711EEL031
 unsigned long long int bin_dec(int bin[]) {
 int i = 0; 
 unsigned long long int dec = 0;
