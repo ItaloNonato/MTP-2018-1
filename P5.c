@@ -3,7 +3,7 @@
 //11711EEl031
 int main(){
 	char s[256];
-	int *pi=(int *)s,i,n,a[64],b,aux;
+	int *pi=(int *)s,i,n,a[64],b,c;
 	printf("   Menu\n1.Codificar\n2.Decodificar\nEscolha uma opcao: ");
 	scanf("%d",&n);
 	getchar();
@@ -29,8 +29,8 @@ if(n==1){
 if(n==2){
 		printf("Digite um codigo numerico: ");
 		for(i=0; i<64; i++){
-			scanf("%d%c",&a[i],&aux);
-			if(aux!=',')
+			scanf("%d%c",&a[i],&c);
+			if(c!=',')
 				break;
 		}
 		printf("%s",&a);
