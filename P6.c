@@ -1,4 +1,6 @@
 #include <stdio.h>
+//Italo Dias Nonato
+//11711EEL031
 int soma(int*,int*);
 float divisao(float,int);
 int main() {
