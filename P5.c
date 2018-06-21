@@ -2,8 +2,8 @@
 //Italo Dias Nonato
 //11711EEl031
 int main(){
-	char s[256];
-	int *pi=(int *)s,i,n,a[64],b,c;
+	char s[256],c;
+	int *pi=(int *)s,i,n,a[64],b;
 	printf("   Menu\n1.Codificar\n2.Decodificar\nEscolha uma opcao: ");
 	scanf("%d",&n);
 	getchar();
