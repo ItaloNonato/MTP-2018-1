@@ -1,9 +1,9 @@
 #include <stdio.h>
 //Italo Dias Nonato
 //11711EEL031
-unsigned long long int bin_dec(int bin[]) {
+unsigned int bin_dec(int bin[]) {
 int i = 0; 
-unsigned long long int dec = 0;
+unsigned int dec = 0;
 while(i<32) {
 	dec =dec*2+(bin[i] - 0);
 i++;
@@ -35,7 +35,7 @@ int main() {
 	    	dec_bin(nd1,bin);
 	    	for(a=0;a<32;a++)
 	    	bin2[a]=~bin[a] &0x1;
-	    	printf(": %d ",bin_dec(bin2));	
+	    	printf(": %u ",bin_dec(bin2));	
 	    	printf("(");
 	    	for(c=0;c<32;c++)
 	   		printf("%d",bin2[c]);
@@ -51,7 +51,7 @@ int main() {
 			dec_bin(nd2,bin2);
 			for(c=0;c<32;c++)
 			bin3[c]=bin[c]&bin2[c];
-			printf(": %d ",bin_dec(bin3));
+			printf(": %u ",bin_dec(bin3));
 			printf("(");
 			for(c=0;c<32;c++)
 			printf("%d",bin3[c]);
@@ -67,7 +67,7 @@ int main() {
 			dec_bin(nd2,bin2);
 			for(c=0;c<32;c++)
 			bin3[c]=bin[c]|bin2[c];
-			printf(": %d ",bin_dec(bin3));
+			printf(": %u ",bin_dec(bin3));
 			printf("(");
 			for(c=0;c<32;c++)
 			printf("%d",bin3[c]);
@@ -83,7 +83,7 @@ int main() {
 			dec_bin(nd2,bin2);
 			for(c=0;c<32;c++)
 			bin3[c]=bin[c]^bin2[c];
-			printf(": %d ",bin_dec(bin3));
+			printf(": %u ",bin_dec(bin3));
 			printf("(");
 			for(c=0;c<32;c++)
 			printf("%d",bin3[c]);
@@ -100,7 +100,7 @@ int main() {
 			bin3[c+nd2]=bin[c]>>bin2[c];
 			for(b=0;b<nd2;b++)
 			bin3[b]=0;
-			printf(": %d (",bin_dec(bin3));
+			printf(": %u (",bin_dec(bin3));
 			for(c=0;c<32;c++)
 			printf("%d",bin3[c]);
 			printf(")");
@@ -119,7 +119,7 @@ int main() {
 		}
 			for(c=a;c<32;c++)
 			bin3[c]=0;
-			printf(": %d (",bin_dec(bin3));
+			printf(": %u (",bin_dec(bin3));
 			for(c=0;c<32;c++)
 			printf("%d",bin3[c]);
 			printf(")");
