@@ -1,10 +1,10 @@
 #include <stdio.h>
 //Italo Dias Nonato
 //11711EEL031
-unsigned long long int bin_dec(char bin[]) {
+unsigned int bin_dec(char bin[]) {
 int i = 0; 
-unsigned long long int dec = 0;
-while(bin[i]!='\0') {
+unsigned int dec = 0;
+while(bin[i]) {
 	dec =dec*2+(bin[i] - '0');
 i++;
 }
@@ -29,12 +29,12 @@ scanf("%d",&n);
       switch(n){
     	case 1:
     		printf("Binario: ");
-    		scanf("%s",&bin); getchar();
-    		printf("Decimal: %d",bin_dec(bin));
+    		scanf("%s",bin); getchar();
+    		printf("Decimal: %u",bin_dec(bin));
     		break;
     	case 2:
     		printf("Binario: ");
-            scanf("%s",&bin); getchar();
+            scanf("%s",bin); getchar();
             printf("Hexadecimal: %x",bin_dec(bin));
     		break;
     	case 3:
