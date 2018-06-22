@@ -9,10 +9,10 @@ for(i = 0; i < tam; i++)
 vetor[i] = (float) rand()/(float) RAND_MAX + 0.5f;
 }
 float soma(float *inicio_vetor, float *fim_vetor) {
-return (inicio_vetor == fim_vetor)? 0 : *inicio_vetor+soma(inicio_vetor+1, fim_vetor);
+return (inicio_vetor == fim_vetor)? 0 : (*inicio_vetor)+soma(inicio_vetor+1, fim_vetor);
 }
 float produto(float *inicio_vetor, float *fim_vetor) {
-return (inicio_vetor == fim_vetor)? 1 : *inicio_vetor*produto(inicio_vetor+1, fim_vetor);
+return (inicio_vetor == fim_vetor)? 1 : (*inicio_vetor)*produto(inicio_vetor+1, fim_vetor);
 }
 int main(){
 	srand(123456);
