@@ -33,7 +33,7 @@ if(n==2){
 			if(c!=',')
 				break;
 		}
-		printf("%s",a);
+		printf("%s",&a);
 	}	
 	return 0;
 }
