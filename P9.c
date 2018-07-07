@@ -26,17 +26,18 @@ void cadastrar(int i){
 			scanf("%f",&dados[i].d.profundidade);
 			printf("Altura= ");
 			scanf("%f",&dados[i].d.altura);
-			printf("\nProduto %d cadastrado com sucesso\n\n",i);
+			printf("\nProduto %d cadastrado com sucesso\n\n",i+1);
 }
 void consultar(int i){
 	if(strlen(dados[i].nome) == 0){
 		printf("Produto nao cadastrado!\n\n");
 }
 	else
-	printf("%s, R$ %.2f, L: %.2fm x P: %.2fm x A: %.2fm\n",dados[i].nome,dados[i].preco,dados[i].d.largura,dados[i].d.profundidade,dados[i].d.altura);
+	printf("%s, R$ %.2f, L: %.1fm x P: %.2fm x A: %.2fm\n",dados[i].nome,
+	dados[i].preco,dados[i].d.largura,dados[i].d.profundidade,dados[i].d.altura);
 }
 int main() {
-	int n,m,i,j=0;
+	int n,m,i;
 	Produto P;
 	for(i=0;i<2;i++){
 		strcpy(dados[i].nome, "");
@@ -47,13 +48,16 @@ while(n!=3){
 		if(n==1){
 		printf("Produto 1 ou 2: ");
 		scanf("%d",&m);getchar();
-		cadastrar(m);
+		if(m==1||m==2)
+		cadastrar(m-1);
 	}
 		else if(n==2){
 			printf("Produto 1 ou 2: ");
 			scanf("%d",&m);getchar();
-			consultar(m);
+			if(m==1||m==2)
+			consultar(m-1);
 	}
 }
 	return 0;
 }
+
