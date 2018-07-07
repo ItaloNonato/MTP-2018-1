@@ -1,9 +1,10 @@
+//Nome: Italo Dias Nonato
+//Matricula: 11711EEl031
 #include <stdio.h>
-//Italo Dias Nonato
-//11711EEl031
 int main(){
-	char s[256],c;
-	int *pi=(int *)s,i,n,a[64],b;
+	int a[64],i,n,b;;
+	char s[256],*ps=(char*)a,c;
+	int *pi=(int *)s;
 	printf("   Menu\n1.Codificar\n2.Decodificar\nEscolha uma opcao: ");
 	scanf("%d",&n);
 	getchar();
@@ -33,7 +34,7 @@ if(n==2){
 			if(c!=',')
 				break;
 		}
-		printf("%s",&a);
+		printf("%s",ps);
 	}	
 	return 0;
 }
