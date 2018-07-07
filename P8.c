@@ -1,5 +1,5 @@
 //Nome: Italo Dias Nonato
-//Matricula: 11711EEl031
+//Matricula: 11711EEL031
 #include <stdio.h>
 #include <stdlib.h>
 #define K 100
