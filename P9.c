@@ -1,8 +1,8 @@
+//Nome: Italo Dias Nonato
+//Matricula: 11711EEL031
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//Italo Dias Nonato
-//11711EEL031
 struct Dimensoes{
 	float largura;
 	float profundidade;
@@ -33,7 +33,7 @@ void consultar(int i){
 		printf("Produto nao cadastrado!\n\n");
 }
 	else
-	printf("%s, R$ %.2f, L: %.1fm x P: %.2fm x A: %.2fm\n",dados[i].nome,dados[i].preco,dados[i].d.largura,dados[i].d.profundidade,dados[i].d.altura);
+	printf("%s, R$ %.2f, L: %.2fm x P: %.2fm x A: %.2fm\n",dados[i].nome,dados[i].preco,dados[i].d.largura,dados[i].d.profundidade,dados[i].d.altura);
 }
 int main() {
 	int n,m,i,j=0;
