@@ -1,8 +1,8 @@
+//Nome: Italo Dias Nonato
+//Matricula: 11711EEl031
 #include <stdio.h>
 #include <stdlib.h>
 #define K 100
-//Italo Dias Nonato
-//11711EEl031
 void gera_numeros(float * vetor, int tam) {
 int i;
 for(i = 0; i < tam; i++)
