@@ -57,7 +57,7 @@ void leitura(Produto *p, int *m)
 		{
 			for(i = 0; i <*m; i++)
 			{
-				fread(&p[i].nome, sizeof(char), 64, arquivo);
+				fread(p[i].nome, sizeof(char), 64, arquivo);
 				fread(&p[i].preco, sizeof(float), 1, arquivo);
 				fread(&p[i].d.largura, sizeof(float), 1, arquivo);
 				fread(&p[i].d.profundidade, sizeof(float), 1, arquivo);
