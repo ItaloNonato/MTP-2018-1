@@ -57,7 +57,7 @@ void escrita(Produto *p, int m)
 void leitura(Produto *p, int *m)
 {
 	FILE *arquivo;
-	int i;
+	int i,sof;
 	*m = 0;
 	printf("Digite o nome do arquivo para ser lido: ");
 	scanf("%s", nomearquivo);
