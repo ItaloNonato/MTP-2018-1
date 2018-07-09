@@ -18,6 +18,21 @@ struct meuProduto{
 	float preco;
 	struct Dimensoes d;	
 }Produto;
+
+int sizeofFile(char nomearquivo[NCHAR_NOME])
+{
+	int sof = 0;
+	FILE* arquivo = fopen(nomearquivo, "rb");
+	if (arquivo) {
+		fseek(arquivo, 0, SEEK_END);
+		sof = ftell(arquivo);
+		fclose(arquivo);
+	} else {
+		fprintf(stderr, ">>> Arquivo nao encontrado!\n");
+		sof = -1;
+	}
+	return sof;
+}
 void escrita(Produto *p, int m)
 {
 	FILE *arq;
@@ -73,21 +88,6 @@ void leitura(Produto *p, int *m)
 	}else
 		fprintf(stderr, ">>> Carregamento nao efetuado!\n");
 	
-}
-
-int sizeofFile(char nomearquivo[NCHAR_NOME])
-{
-	int sof = 0;
-	FILE* arquivo = fopen(nomearquivo, "rb");
-	if (arquivo) {
-		fseek(arquivo, 0, SEEK_END);
-		sof = ftell(arquivo);
-		fclose(arquivo);
-	} else {
-		fprintf(stderr, ">>> Arquivo nao encontrado!\n");
-		sof = -1;
-	}
-	return sof;
 }
 void cadastrar(Produto *p,int i){
 			
