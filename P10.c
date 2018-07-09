@@ -4,7 +4,6 @@
 #define NCHAR_NOME 64
 //Italo Dias Nonato
 //11711EEL031
-int sof;
 long int ftell(FILE *stream);
 char nomearquivo[NCHAR_NOME];
 struct Dimensoes{
