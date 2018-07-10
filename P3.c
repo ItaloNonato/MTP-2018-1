@@ -1,129 +1,102 @@
-#include <stdio.h>
 //Italo Dias Nonato
 //11711EEL031
-long int bin_dec(int bin[]) {
-int i = 0; 
-long int dec = 0;
-while(i<32) {
-	dec =dec*2+(bin[i] - 0);
-i++;
+#include<stdio.h>
+
+void bin(unsigned int num)
+{
+	int i=0, j=31;
+
+	char bits1[33];
+	
+	for(i=0; i<32; i++){
+		if(num%2==0)
+			bits1[j]=0;
+		else
+			bits1[j]=1;	
+		num=num/2;
+		j--;
+	}
+	
+	for(i=0; i<32; i++)
+		printf("%i", bits1[i]);
 }
-return dec;
-}
-void dec_bin(unsigned int bits,int bin[]) {
-	int i,nb=31;
-	printf("(");
-  while(nb>=0) {
-bin[nb]=bits%2;
-bits=bits/2;
-nb--;
-  }
-  	for(i=0;i<32;i++)
-	   	printf("%d",bin[i]);
-	printf(") ");
-}
-int main() {
-	int a,b,c,opcao,nd2,nd1,bin[32],bin2[32],bin3[32];
-	printf("         Menu\n"
-	"1.NOT\n2.AND\n3.OR\n4.XOR\n5.RIGHT SHIFT\n6.LEFT SHIFT\n\nEscolha uma opcao: ");
-	scanf("%d",&opcao); getchar();
-	printf("Digite um numero inteiro: ");
-	scanf("%d",&nd1); getchar();
-	switch(opcao){
+
+int main(){
+	
+	int op, arg1, arg2;
+	char bin1[32];
+	
+	printf("Calculadora Bitwase\n1. NOT\n2. AND\n3. OR\n4. XOR\n5. Right Shift\n6. Left Shift\nOpcao Escolhida: ");
+	
+	scanf("%d", &op); getchar();
+	scanf("%d", &arg1); getchar();
+	
+	if(op!=1){
+		scanf("%d", &arg2); getchar();
+	}	
+	
+	switch(op)
+	{
 		case 1:
-			printf("NOT %d ",nd1);
-	    	dec_bin(nd1,bin);
-	    	for(a=0;a<32;a++)
-	    	bin2[a]=~bin[a] &0x1;
-	    	printf(": %li ",bin_dec(bin2));	
-	    	printf("(");
-	    	for(c=0;c<32;c++)
-	   		printf("%d",bin2[c]);
+			printf("NOT %d (", arg1); 
+			bin(arg1);
+			int NOT = ~arg1;
+			printf("): %d (", NOT);
+			bin(NOT);
 			printf(")");
-		break;
-		
+			break;
 		case 2:
-			printf("Digite outro numero inteiro: ");
-			scanf("%d",&nd2);  getchar();
-			printf("%d ",nd1);
-			dec_bin(nd1,bin);
-			printf("AND %d ",nd2);
-			dec_bin(nd2,bin2);
-			for(c=0;c<32;c++)
-			bin3[c]=bin[c]&bin2[c];
-			printf(": %li ",bin_dec(bin3));
-			printf("(");
-			for(c=0;c<32;c++)
-			printf("%d",bin3[c]);
+			printf("%d (", arg1); 
+			bin(arg1);
+			printf(") AND %d (", arg2);
+			bin(arg2);
+			int AND = arg1&arg2;
+			printf("): %d (", AND);
+			bin(AND);
 			printf(")");
 			break;
-			
 		case 3:
-			printf("Digite outro numero inteiro: ");
-			scanf("%d",&nd2);  getchar();
-			printf("%d",nd1);
-			dec_bin(nd1,bin);
-			printf("OR %d",nd2);
-			dec_bin(nd2,bin2);
-			for(c=0;c<32;c++)
-			bin3[c]=bin[c]|bin2[c];
-			printf(": %li ",bin_dec(bin3));
-			printf("(");
-			for(c=0;c<32;c++)
-			printf("%d",bin3[c]);
+			printf("%d (", arg1); 
+			bin(arg1);
+			printf(") OR %d (", arg2);
+			bin(arg2);
+			int OR = arg1|arg2;
+			printf("): %d (", OR);
+			bin(OR);
 			printf(")");
 			break;
-		
 		case 4:
-			printf("Digite outro numero inteiro: ");
-			scanf("%d",&nd2);  getchar();
-			printf("%d",nd1);
-			dec_bin(nd1,bin);
-			printf("XOR %d",nd2);
-			dec_bin(nd2,bin2);
-			for(c=0;c<32;c++)
-			bin3[c]=bin[c]^bin2[c];
-			printf(": %li ",bin_dec(bin3));
-			printf("(");
-			for(c=0;c<32;c++)
-			printf("%d",bin3[c]);
+			printf("%d (", arg1); 
+			bin(arg1);
+			printf(") XOR %d (", arg2);
+			bin(arg2);
+			int XOR = arg1^arg2;
+			printf("): %d (", XOR);
+			bin(XOR);
 			printf(")");
 			break;
 		case 5:
-			printf("Digite o numero do deslocamento: ");
-			scanf("%d",&nd2);  getchar();
-			printf("%d",nd1);
-			dec_bin(nd1,bin);
-			printf(">> %d",nd2);
-			dec_bin(nd2,bin2);
-			for(c=0;c<32-nd2;c++)
-			bin3[c+nd2]=bin[c]>>bin2[c];
-			for(b=0;b<nd2;b++)
-			bin3[b]=0;
-			printf(": %li (",bin_dec(bin3));
-			for(c=0;c<32;c++)
-			printf("%d",bin3[c]);
+			printf("%d (", arg1); 
+			bin(arg1);
+			printf(") >> %d (", arg2);
+			bin(arg2);
+			int RIGHT = arg1>>arg2;
+			printf("): %d (", RIGHT);
+			bin(RIGHT);
 			printf(")");
 			break;
 		case 6:
-			printf("Digite o numero do deslocamento: ");
-			scanf("%d",&nd2);  getchar();
-			printf("%d",nd1);
-			dec_bin(nd1,bin);
-			printf("<< %d",nd2);
-			dec_bin(nd2,bin2);
-			a=0;
-			for(c=nd2;c<32;c++){
-			bin3[a]=bin[c]<<bin2[c];
-			a++;
-		}
-			for(c=a;c<32;c++)
-			bin3[c]=0;
-			printf(": %li (",bin_dec(bin3));
-			for(c=0;c<32;c++)
-			printf("%d",bin3[c]);
+			printf("%d (", arg1); 
+			bin(arg1);
+			printf(") << %d (", arg2);
+			bin(arg2);
+			int LEFT = arg1<<arg2;
+			printf("): %d (", LEFT);
+			bin(LEFT);
 			printf(")");
 			break;
+		default:
+			printf("Erro\n");
 	}
 	return 0;
 }
