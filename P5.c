@@ -22,8 +22,8 @@ if(n==1){
 if(n==2){
 		printf("Digite um codigo numerico: ");
 		for(i=0;i<64;i++){
-			scanf("%d%c",&a[i],&c);
-			if(c==10)
+			scanf("%d",&a[i]);
+			if(a[i]==0)
 			break;
 		}
 		printf("%s",ps);
